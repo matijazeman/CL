@@ -1,0 +1,115 @@
+body {
+    background: url(../images/back.png);
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    /*background-size:100% 100%;*/
+	background-size:100%;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+/*selekcija elemenata*/
+*:not(input,textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.ui-page {
+    background: transparent;
+	-webkit-backface-visibility: hidden;
+}
+.ui-content{
+    background: transparent;
+}
+.ui-bar-a{
+	/*border: 1px solid #229b4b;*/
+	/*border-top: 1px solid #229b4b;*/
+	border: 0px;
+	border-bottom: 1px solid #666666;
+	background:transparent !important;
+	/*background-color: rgba(34, 155, 75, 0.6);*/
+}
+.ui-body-a{
+	/*border: 1px solid #229b4b;*/
+	border-bottom: 2px solid #666666;
+	background-color: rgba(146, 159, 159, 0.2);
+    /*background-color: rgba(34, 155, 75, 0.6);*/
+}
+.ui-header{
+    background: transparent;
+	border-width: 0px 0;
+}
+.ui-btn {
+background-color: #F0F0FF !important;
+border-color: #F0F0FF !important;
+}
+.ui-btn-single {
+background-color: #F0F0FF !important;
+border-color: #229b4b !important;
+}
+.ui-btn-logout {
+background-color: #FF0000 !important;
+border-color: #229b4b !important;
+color: #FFFFFF !important;
+text-shadow: #000000 0px 1px 0px !important;
+}
+.ui-btn-active {
+background-color: #229b4b !important;
+border-color: #229b4b !important;
+}
+.ui-footer-fixed{
+padding-bottom: 0px !important;
+}
+
+/*
+h2 { 
+   position: absolute; 
+   top: 90px; 
+   left: 0; 
+   text-align: center;
+   width: 100%; 
+}
+*/
+h2 {
+-webkit-margin-before: 0.1em;
+-webkit-margin-after: 0em;
+}
+/*.imgA1 { position:relative; width:75%; margin-top:10%;margin-bottom:30%;  z-index: 1; background-color:#ffffff } */
+.imgA1 { position:relative; margin-top: 10%; margin-bottom: 30%;z-index: 1; background-color:#ffffff } 
+.imgB1 { position:absolute; height: 18%; display: block; top: 40%; margin-left: auto; margin-right: auto; left:13%; z-index: 3; } 
+
+
+h2 span { 
+   color: black; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(255, 255, 255); /* fallback color */
+   background: rgba(255, 255, 255, 0.7);
+}
+.ui-icon-kartica::after
+{
+    background: url('../images/card_ikona.png') no-repeat !important;
+    background-size: 24px 24px !important;
+	border-radius:0px;
+}
+.ui-icon-bodovi::after
+{
+    background: url('../images/bodovi_ikona.png') no-repeat !important;
+    background-size: 24px 24px !important;
+	border-radius:0px;
+}
+.ui-icon-vijesti::after
+{
+    background: url('../images/news_ikona.png') no-repeat !important;
+    background-size: 24x 24px !important;
+	border-radius:0px;
+}
+.ui-icon-info::after
+{
+    background: url('../images/info_ikona.png') no-repeat !important;
+    background-size: 24px 24px !important;
+	border-radius:0px;
+}

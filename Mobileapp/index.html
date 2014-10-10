@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Farmacia program vjernosti</title> 
+	<meta name="viewport" content="width=device-width, user-scalable=no"> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/app.config.js"></script>
+<script src="js/jquery.mobile-1.4.3.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<link rel="stylesheet" href="css/app.config.css" />
+<script src="js/app.logic.js"></script>
+<script src="js/jquery-ean13.min.js"></script>
+<!--<script src="js/sha512.js"></script>-->
+
+</head> 
+<body> 
+<div data-role="page" id="splash">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		
+	</div><!-- /header -->
+
+	<div data-role="content" style="text-align: center;align:center;background: transparent;">	
+	<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto; margin-top: 40%; margin-bottom: 40%;"/>
+	</div><!-- /content -->
+
+</div><!-- /page -->
+<div data-role="page" id="login">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	<p/><p/>
+	
+		<label for="text-basic">Broj kartice:</label>
+		<input type="number" name="text-basic" id="login_brkartice" value="" placeholder="Unesite broj kartice...">	
+		<label for="text-basic">Lozinka:</label>
+		<input type="password" name="text-basic" autocomplete="off" id="login_pass" value="" placeholder="Unesite lozinku...">
+		<a href="#" onclick="javaScript:dologin();" class="ui-shadow ui-btn ui-corner-all">Prijavi se</a>
+		<p id="login_error" style="color:red"></p>
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="kartica" style="">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content" id="kartica-content">	
+	<h2><span id="cl_kartica_ime"></span></h2>
+	<h2><span id="cl_kartica_broj"></span></h2>
+	<div style="text-align: center; margin-left:auto;margin-right:auto">
+	<div id="barkod_mali" ></div>
+     <!-- <img class="imgA1" src="images/kartica.png"/> -->
+      
+      <!-- <img class="imgB1" src="images/kartica_full.png" /> -->
+	   <!--<img class="imgA1" src="images/kartica_full.png" />-->
+	<h3 style="text-align:center">Rotiraj ekran za uvećanje</h3> 
+	  
+</div>
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica" class="ui-btn-active ui-state-persist" >Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" >Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti">Akcije</a></li>
+				<li><a href="#info" data-icon="info">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="landscape" >
+
+	<div data-role="content" style="height:100%; margin-top:10%; padding-left:5%; padding-right:5%; text-align: center; background-color:#ffffff" id="barkod_content">	
+	
+      <!--<img src="images/kartica_full.png" style="width:100%" /> -->
+     
+
+	</div><!-- /content -->
+	
+
+</div><!-- /page -->
+
+<div data-role="page" id="bodovi">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	<div class="image">
+<div class="ui-corner-all custom-corners">
+  <div class="ui-bar ui-bar-a">
+   <h3 style="color:green">Stanje bodova</h3>
+  </div>
+  <div class="ui-body ui-body-a" >
+     <p id="cl_infobrojbodova">Učitavam...</p>
+  </div>
+</div>	
+
+      
+	   
+</div>
+
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica" >Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" class="ui-btn-active ui-state-persist">Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti">Akcije</a></li>
+				<li><a href="#info" data-icon="info">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="vijesti">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content" id="cl_news">
+
+	
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica">Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" >Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti" class="ui-btn-active ui-state-persist">Akcije</a></li>
+				<li><a href="#info" data-icon="info">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="info">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+
+<a href="#farmacia" class="ui-shadow ui-btn ui-btn-single ui-corner-all">Informacije o Farmacia-i</a>
+<a href="#farmaciaCL" class="ui-shadow ui-btn ui-btn-single ui-corner-all">Informacije o programu vjernosti</a>
+<a href="#poslovnice" class="ui-shadow ui-btn ui-btn-single ui-corner-all">Popis ljekarni</a>
+
+<a href="#" onclick="javascript:dologout();" class="ui-shadow ui-btn ui-btn-logout ui-corner-all">Odjavi se</a>
+	   
+
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica" >Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" >Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti">Akcije</a></li>
+				<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+<div data-role="page" id="poslovnice">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	<a href="#info" class="ui-shadow ui-btn ui-btn-single ui-corner-all">Nazad</a>
+<div id="cl_poslovnice">
+ 
+</div>	
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica" >Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" >Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti">Akcije</a></li>
+				<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+<div data-role="page" id="error_page">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	<a href="" data-rel="back" class="ui-shadow ui-btn ui-btn-single ui-corner-all">Nazad</a>
+<div class="ui-corner-all custom-corners">
+  <div class="ui-bar ui-bar-a">
+    <h3 style="text-align:center" >Pogreška</h3>
+  </div>
+  <div class="ui-body ui-body-a">
+     <p style="text-align:center">Dogodila se pogreška, molimo pokušajte ponovno ili kontaktirajte službu za korisnike</p>
+	 <p id="debug_imei" style="text-align:center"></p>
+  </div>
+</div>	
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica" >Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" >Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti">Akcije</a></li>
+				<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="farmaciaCL">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	<a href="" data-rel="back" class="ui-shadow ui-btn ui-btn-single ui-corner-all">Nazad</a>
+<div class="ui-corner-all custom-corners">
+  <div class="ui-bar ui-bar-a">
+    <h3 style="text-align:center" >Program vjernosti</h3>
+  </div>
+  <div class="ui-body ui-body-a">Moja Farmacia program vjernosti namijenjen je svim ljudima koji vole zdrav život i posjeduju interes u području zdravlja i njege.<br>Učlanjivanjem u Moja Farmacia program vjernosti stječete pravo na skupljanje bodova pri svakoj kupnji u svim Farmacia ljekarnama i specijaliziranim prodavaonicama diljem Hrvatske gdje određene prikupljene bodove možete zamijeniti za popust.<br>Pristupite svom profilu putem portala. Pristup portalu omogućen je osobama koje su se registrirale na dolje navedenom linku ili su prilikom popunjavanja pristupnice upisale svoju e-mail adresu. Ukoliko na pristupnici niste naveli svoju e-mail adresu, a želite pristupiti portalu molimo vas da se javite u najbližu Farmacia ljekarnu ili specijaliziranu prodavaonicu te nadopunite svoje podatke kako bi vam mogli dostaviti privremenu lozinku za prijavu. Ukoliko nemate Farmacia karticu registrirajte se <a href="https://loyalty.atlanticgrupa.com/farmacia/RegistracijaClana.aspx">ovdje</a>.
+  </div>
+</div>	
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica" >Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" >Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti">Akcije</a></li>
+				<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="farmacia">
+
+	<div data-role="header" style="text-align: center;align:center;background: transparent;">
+		<img src="images/logo.png" height="84" style="margin-left: auto;margin-right: auto;"/>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	<a href="" data-rel="back" class="ui-shadow ui-btn ui-btn-single ui-corner-all">Nazad</a>
+<div class="ui-corner-all custom-corners">
+  <div class="ui-bar ui-bar-a">
+    <h3 style="text-align:center" >Farmacia</h3>
+  </div>
+  <div class="ui-body ui-body-a">Atlantic Grupa je sa svojim ljekarničkim jedinicama oformila najveći privatni lanac ljekarni u Hrvatskoj. Lanac objedinjuje ljekarne i specijalizirane trgovine za promet lijekovima i dodacima prehrani jedan od ključnih čimbenika poslovanja, ali i konsolidacije na ljekarničkom tržištu. Kontinuiranim razvojem poslovanja i struke te stvaranjem korektnih partnerskih odnosa formiran je jedan od vodećih subjekata u ljekarničkom segmentu prepoznatljiv pod brandom FARMACIA.<br>Atlantic Grupa je kao jedan od svojih strateških ciljeva u ovom segmentu definirala formiranje uzorno postavljenog i organiziranog hrvatskog nacionalnog ljekarničkog lanca, prema najvišim standardima ljekarničke struke, čija bi kvaliteta bila prepoznata prvenstveno od strane pacijenta.<br>Važan element strategije kompanije u razvoju vlastitog i ukupnog ljekarničkog poslovanja predstavlja sustav razvoja ljekarničke struke, s osobitim naglaskom na edukaciju postojećeg i ulaganje u razvoj novog farmaceutskog kadra. U okviru ove strategije Atlantic Grupa je osnovala edukacijski centar kao okosnicu ukupnog edukacijskog programa, u okviru kojeg će se pažljivo i detaljno razvijati sustavi edukacije za pojedina radna mjesta, kao i individualna edukacija prema potrebama pojedinačnih djelatnika. Veliku važnost unutar ovog programa, uzimajući u obzir važnost formalnog stručnog obrazovanja, pridajemo i delegiranju naših zdravstvenih djelatnika na postdiplomski studij pri Farmceutasko-biokemijskom fakultetu.<br>Više informacija pronađite na našoj web stranici <a href="www.farmacia.hr">www.farmacia.hr</a>
+  </div>
+</div>	
+	</div><!-- /content -->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#kartica" data-icon="kartica" >Kartica</a></li>
+                <li><a href="#bodovi" data-icon="bodovi" >Bodovi</a></li>
+                <li><a href="#vijesti" data-icon="vijesti">Akcije</a></li>
+				<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
+            </ul>
+        </div><!-- /navbar -->
+</div><!-- /footer -->
+
+</div><!-- /page -->
+
+</body>
+</html>

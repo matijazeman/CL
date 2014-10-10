@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id        = "com.comminus.farmaciaCL"
+        version   = "1.0.0">
+ 
+   <name>Farmacia CL</name>
+ 
+   <description>Farmacia customer loyalty app</description>
+ 
+   <author href="http://www.comminus.hr" email="matija.zeman@comminus.hr">Matija Zeman</author>
+ 
+   <feature name="http://api.phonegap.com/1.0/network"/>
+ 
+   <preference name="phonegap-version" value="3.5.0" />
+   <preference name="target-device" value="universal" />
+ 
+   <access origin="*" />
+ 
+   <!-- Icons -->
+   <icon src="images/icon.png" width="64" height="64" gap:role="default" />
+   <!-- Icons android -->
+   <icon src="images/icon-72x72.png" width="72" height="72" gap:platform="android" gap:density="hdpi" />
+   <icon src="images/icon-96x96.png" width="96" height="96" gap:platform="android" gap:density="xhdpi" />
+   <!--
+   <icon src="images/icon-72x72.png" width="72" height="72" gap:platform="ios" />
+	-->
+	<!-- iPhone / iPod Touch  -->
+	<icon src="icon-60.png" gap:platform="ios" width="60" height="60" />
+	<icon src="icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+
+	<!-- iPad -->
+	<icon src="icon-76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+
+	<!-- Settings Icon -->
+	<icon src="icon-small.png" gap:platform="ios" width="29" height="29" />
+	<icon src="icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+	<!-- Spotlight Icon -->
+	<icon src="icon-40.png" gap:platform="ios" width="40" height="40" />
+	<icon src="icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+	
+   <!-- Splash Screens 
+   <gap:splash src="splash.png" />
+   <gap:splash src="images/splash-160x220.png" gap:platform="android" gap:density="ldpi" />
+   <gap:splash src="splash.png" gap:platform="android" gap:density="mdpi" />
+   <gap:splash src="images/splash-450x650.png" gap:platform="android" gap:density="hdpi" />
+   -->
+   <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+</widget>
+
